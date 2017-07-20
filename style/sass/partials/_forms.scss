@@ -1,0 +1,32 @@
+@if($pz-form){
+
+form {
+    min-width: 66vw;
+    fieldset {
+        border: $pz-form-border-style;
+        label {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            &.required::after {
+                content: '*';
+                color: red;
+            }
+        }
+        input {
+            line-height: 2rem;
+            border-radius: $pz-border-radius;
+            border: $pz-form-border-style;
+            color: $pz-form-font-color;
+            font-size: $pz-form-font-size;
+        }
+        textarea {
+            border-radius: $pz-border-radius;
+            border: $pz-form-border-style;
+            min-height: 7rem;
+            color: $pz-form-font-color;
+            font-size: $pz-form-font-size + 0.1rem;
+        }
+    }
+}
+    
+}

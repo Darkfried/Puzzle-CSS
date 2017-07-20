@@ -1,10 +1,10 @@
-$chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour clip-path
+@if($pz-menu) {
 
 .fixed {
     position: fixed;
     top: 0;
     z-index: 99999;
-    background-color: rgba($background-color, 0.8);
+    background-color: rgba($pz-background-color, 0.8);
     width: 100%;
 }
 
@@ -27,12 +27,12 @@ $chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour 
                     text-decoration: none;
                     text-align: center;
                     line-height: 250%;
-                    transition-duration: $transition-duration;
+                    transition-duration: $pz-transition-duration;
                     &:hover {
-                        background: darken($background-color, 10%);
+                        background: darken($pz-background-color, 10%);
                         border-bottom: solid;
                         border-bottom-width: medium;
-                        border-bottom-color: lighten($background-color, 10%);
+                        border-bottom-color: lighten($pz-background-color, 10%);
                     }
                 }
             }
@@ -41,7 +41,7 @@ $chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour 
 }
 
 .mobileUp{
-    background: rgba(darken($background-color, 10%), 0.8);
+    background: rgba(darken($pz-background-color, 10%), 0.8);
     position: fixed;
     right: 2rem;
     bottom: 2rem;
@@ -55,7 +55,9 @@ $chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour 
         flex-grow: 1;
         text-align: center;
         line-height: 250%;
-        clip-path: $chevron; //chevron
+        clip-path: $pz-chevron; //chevron
         background: rgba(white,0.8);
     }
+}
+    
 }
