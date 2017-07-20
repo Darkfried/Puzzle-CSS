@@ -1,0 +1,20 @@
+$border-style: solid 2px;
+.btn{
+    border-radius: $border-radius;
+    border:$border-style;
+    border-color: dodgerblue;
+    background-color: cornflowerblue;
+    line-height: 2rem;
+    width: 20%;
+    text-align: center;
+    font-size: $font-size;
+    margin-top: 1rem;
+    position: relative;
+    left: 80%;
+    
+    transition-duration: 0.4s;
+    
+    &:hover{
+        background-color: darken(cornflowerblue, 10%);
+    }
+}

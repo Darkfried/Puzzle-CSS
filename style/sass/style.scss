@@ -1,0 +1,34 @@
+@chartset: utf-8;
+
+$background-color: rgb(128,128,128);
+$transition-duration: 0.3s;
+
+@import '_menu.scss';
+@import '_grid.scss';
+@import '_forms';
+@import '_btn';
+@import '_media'; // import it last!!
+
+* {
+    //border: solid black 1px;
+    color: white;
+    box-sizing: border-box;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: $background-color;
+    margin: 0;
+    position: relative;
+}
+
+#portrait{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+p,
+ul {
+    padding: 0 5%;
+}

@@ -1,0 +1,175 @@
+@chartset : utf-8;
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  background-color: rgba(128, 128, 128, 0.8);
+  width: 100%; }
+
+.navbar-nav {
+  padding: 0;
+  margin: 0; }
+  .navbar-nav ul {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+    .navbar-nav ul li {
+      flex-grow: 1;
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .navbar-nav ul li a {
+        flex-grow: 1;
+        text-decoration: none;
+        text-align: center;
+        line-height: 250%;
+        transition-duration: 0.3s; }
+        .navbar-nav ul li a:hover {
+          background: #676767;
+          border-bottom: solid;
+          border-bottom-width: medium;
+          border-bottom-color: #9a9a9a; }
+
+.mobileUp {
+  background: rgba(103, 103, 103, 0.8);
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 3px;
+  z-index: 99999;
+  height: 3rem;
+  width: 3rem;
+  display: flex; }
+  .mobileUp a {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 250%;
+    clip-path: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%);
+    background: rgba(255, 255, 255, 0.8); }
+
+.row {
+  display: flex;
+  flex: 1 1 100%;
+  padding: 5px; }
+
+.centerH {
+  justify-content: center; }
+
+.centerV {
+  align-items: center;
+  text-align: center; }
+
+.col {
+  flex-direction: column; }
+
+.offset-5 {
+  margin-left: 5%; }
+
+.offset-30 {
+  margin-left: 30%; }
+
+.fill {
+  width: 100%;
+  max-height: 56.25%; }
+
+.cover {
+  background-size: cover;
+  min-height: 100vh; }
+  .cover:nth-of-type(2n) {
+    background: gray; }
+
+.cover:nth-of-type(2n+1) {
+  background-color: limegreen; }
+
+.cover:first-of-type {
+  background: url(../../img/Photo%20by%20%C3%89mile%20Perron%20on%20Unsplash.jpg) center fixed no-repeat; }
+
+form {
+  min-width: 66vw; }
+  form fieldset {
+    border: none; }
+    form fieldset label {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem; }
+      form fieldset label.required::after {
+        content: '*';
+        color: red; }
+    form fieldset input {
+      line-height: 2rem;
+      border-radius: 3px;
+      border: none;
+      color: darkgrey;
+      font-size: 0.9rem; }
+    form fieldset textarea {
+      border-radius: 3px;
+      border: none;
+      min-height: 7rem;
+      color: darkgrey;
+      font-size: 1rem; }
+
+.btn {
+  border-radius: 3px;
+  border: solid 2px;
+  border-color: dodgerblue;
+  background-color: cornflowerblue;
+  line-height: 2rem;
+  width: 20%;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  position: relative;
+  left: 80%;
+  transition-duration: 0.4s; }
+  .btn:hover {
+    background-color: #3676e8; }
+
+@media screen and (max-width: 500px) {
+  .mobile-Hidden {
+    display: none; }
+
+  .mobile-wrap {
+    flex-wrap: wrap;
+    word-wrap: normal; }
+
+  .mobile-wrap-rev {
+    flex-wrap: wrap-reverse;
+    word-wrap: normal; }
+
+  .mobile-display {
+    display: block; }
+
+  .btn {
+    width: 100%;
+    left: 0; }
+
+  #banner {
+    justify-content: center; }
+    #banner h1 {
+      justify-content: center; }
+
+  .fixed {
+    display: none; } }
+@media screen and (min-width: 500px) {
+  .hidden {
+    display: none; } }
+* {
+  color: white;
+  box-sizing: border-box;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  background: gray;
+  margin: 0;
+  position: relative; }
+
+#portrait {
+  max-width: 400px;
+  max-height: 400px; }
+
+p,
+ul {
+  padding: 0 5%; }
+
+/*# sourceMappingURL=style.css.map */

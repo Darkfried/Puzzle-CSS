@@ -1,0 +1,61 @@
+$chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour clip-path
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    background-color: rgba($background-color, 0.8);
+    width: 100%;
+}
+
+.navbar- {
+    &nav {
+        padding: 0;
+        margin: 0;
+        & ul {
+            display: flex;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            & li {
+                flex-grow: 1;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                & a {
+                    flex-grow: 1;
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 250%;
+                    transition-duration: $transition-duration;
+                    &:hover {
+                        background: darken($background-color, 10%);
+                        border-bottom: solid;
+                        border-bottom-width: medium;
+                        border-bottom-color: lighten($background-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobileUp{
+    background: rgba(darken($background-color, 10%), 0.8);
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 3px;
+    z-index: 99999;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    
+    & a{
+        flex-grow: 1;
+        text-align: center;
+        line-height: 250%;
+        clip-path: $chevron; //chevron
+        background: rgba(white,0.8);
+    }
+}
