@@ -46,6 +46,6 @@
 
 .cover{
     &:first-of-type{
-            background: url(../../img/Photo%20by%20%C3%89mile%20Perron%20on%20Unsplash.jpg) center fixed no-repeat;
+            background: $background-color /*put an URL to have a picture*/ center fixed no-repeat;
     }
 }
