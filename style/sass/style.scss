@@ -1,30 +1,41 @@
 @chartset: utf-8;
 
 //#####général properties########
-$pz-background-color: rgb(128, 128, 128);
-$pz-border-radius: 3px;
-$pz-transition-duration: 0.3s;
-$pz-chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%); //pour clip-path
+$pz-background-color: rgb(128, 128, 128) !default;
+$pz-border-radius: 3px !default;
+$pz-transition-duration: 0.3s !default;
+
+//#####grid properties########
+$pz-cover-picture-url: url('') !default;
+
+//#####clip-path premade########
+$pz-chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%) !default;
+$pz-banner-flag: polygon(5% 100%, 0% 100%, 0% 0%, 50% 40%, 100% 0%, 100% 100%, 95% 100%, 95% 10%, 50% 45%, 5% 10%) !default;
 
 //#####form properties########
-$pz-form-font-size: 0.9rem;
-$pz-form-font-color: darkgrey;
-$pz-form-border-style: none;
+$pz-form-font-size: 0.9rem !default;
+$pz-form-font-color: darkgrey !default;
+$pz-form-border-style: none !default;
 
 //#####button properties########
-$pz-btn-border-style: solid 2px;
-$pz-btn-color:cornflowerblue;
-$pz-btn-font-size: 0.9rem;
+$pz-btn-border-style: solid 2px !default;
+$pz-btn-color:cornflowerblue !default;
+$pz-btn-font-size: 0.9rem !default;
 
 //#####import options########
-$pz-grid: true !default;
-$pz-form: false !default;
-$pz-btn: false !default;
-$pz-menu: false !default;
-$pz-media: false !default;
+$pz-grid:               true !default;
+$pz-one-page-options:   true !default;
+$pz-form:               false !default;
+$pz-btn:                false !default;
+$pz-menu:               false !default;
+$pz-media:              false !default;
+$pz-graphical-debug:    false !default;
 
 * {
-    //border: solid black 1px;
+    @if($pz-graphical-debug){
+        border: solid black 1px;
+    }
+    
     color: white;
     box-sizing: border-box;
     text-align: justify;
@@ -42,6 +53,7 @@ ul {
     padding: 0 5%;
 }
 
+//#####if possible don't touche those ones########
     @import 'partials/_grid.scss';
     @import 'partials/_forms.scss';
     @import 'partials/_menu.scss';

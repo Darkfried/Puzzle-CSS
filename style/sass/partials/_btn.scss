@@ -1,28 +1,31 @@
-@if($pz-btn){
-
-.btn{
-    border-radius: $pz-border-radius;
-    border:$pz-btn-border-style;
-    border-color: dodgerblue;
-    background-color: $pz-btn-color;
-    line-height: 2rem;
-    width: 20%;
-    text-align: center;
-    font-size: $pz-btn-font-size;
-    margin-top: 1rem;
-    position: relative;
-    left: 80%;
+@if($pz-btn) {
     
-    transition-duration: 0.4s;
-    
-    &:hover{
-        background-color: darken($pz-btn-color, 10%);
+    .btn-base {
+        border-radius: $pz-border-radius;
+        border: $pz-btn-border-style;
+        line-height: 2rem;
+        width: 20%;
+        text-align: center;
+        font-size: $pz-btn-font-size;
+        margin-top: 1rem;
+        position: relative;
+        left: 80%;
+        transition-duration: 0.4s;
     }
-}
     
-    .btn-clear{
+    .btn {
+        @extend .btn-base;
+        
+        background-color: $pz-btn-color;
+        &:hover {
+            background-color: darken($pz-btn-color, 10%);
+        }
+    }
+    
+    .btn-clear {
+        @extend .btn;
         background: none;
         color: $pz-btn-color;
+        border-style: solid $pz-btn-color 2px;
     }
-    
 }

@@ -1,54 +1,50 @@
-@if($pz-grid){
+@if($pz-grid) {
     
-.row {
-    display: flex;
-    flex: 1 1 100%;
-    padding: 5px;
-}
-
-.centerH {
-    justify-content: center;
-}
-
-.centerV {
-    align-items: center;
-    text-align: center;
-}
-
-.col {
-    flex-direction: column;
-}
-
-.offset-5 {
-    margin-left: 5%;
-}
-
-.offset-30 {
-    margin-left: 30%;
-}
-
-.fill-16\/9 {
-    width: 100%;
-    max-height: 56.25%;
-}
-
-.cover {
-    background-size: cover;
-    min-height: 100vh;
-    &:nth-of-type(2n) {
-        background: $pz-background-color;
+    .row {
+        display: flex;
+        flex: 1 1 100%;
+        padding: 5px;
     }
-}
-
-.cover{
-    &:nth-of-type(2n+1){
-        background-color: limegreen;
+    .centerH {
+        justify-content: center;
     }
-}
-
-.cover{
-    &:first-of-type{
-            background: $pz-background-color /*replace with url to have a picture*/ center fixed no-repeat;
+    .centerV {
+        align-items: center;
+        text-align: center;
     }
-}
+    .col {
+        flex-direction: column;
+    }
+    .offset-5 {
+        margin-left: 5%;
+    }
+    .offset-30 {
+        margin-left: 30%;
+    }
+    .fill-16\/9 {
+        width: 100%;
+        max-height: 56.25%;
+    }
+    
+    @if($pz-one-page-options) {
+        
+        .cover {
+            background-size: cover;
+            min-height: 100vh;
+            &:nth-of-type(2n) {
+                background: $pz-background-color;
+            }
+        }
+        .cover {
+            &:nth-of-type(2n+1) {
+                background-color: limegreen;
+            }
+        }
+        .cover {
+            &:first-of-type {
+                background: $pz-cover-picture-url center fixed no-repeat;
+            }
+        }
+        
+    }
 }
