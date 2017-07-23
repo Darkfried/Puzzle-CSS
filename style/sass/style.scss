@@ -6,7 +6,11 @@ $pz-border-radius: 3px !default;
 $pz-transition-duration: 0.3s !default;
 
 //#####grid properties########
+$pz-gutter: 1em !default;
 $pz-cover-picture-url: url('') !default;
+$pz-pieces-name:'--pieces' !default;
+$pz-pieces: (2, 3, 4) !default;
+$pz-container: 'box-' !default;
 
 //#####clip-path premade########
 $pz-chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%) !default;
@@ -44,13 +48,6 @@ $pz-graphical-debug:    false !default;
 
 body {
     background: $pz-background-color;
-    margin: 0;
-    position: relative;
-}
-
-p,
-ul {
-    padding: 0 5%;
 }
 
 //#####if possible don't touche those ones########

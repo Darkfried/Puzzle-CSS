@@ -6,49 +6,49 @@
   font-family: 'Roboto', sans-serif; }
 
 body {
-  background: gray;
-  margin: 0;
-  position: relative; }
+  background: gray; }
 
-p,
-ul {
-  padding: 0 5%; }
-
-.row {
+*[class*='box-'] {
   display: flex;
-  flex: 1 1 100%;
-  padding: 5px; }
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: -20px; }
 
-.centerH {
-  justify-content: center; }
+*[class*='--pieces'] > * {
+  flex: 0 0 auto;
+  display: block;
+  margin-left: 20px; }
 
-.centerV {
-  align-items: center;
-  text-align: center; }
+/*   
+@if($pz-one-page-options) {
+    
+    .cover {
+        background-size: cover;
+        min-height: 100vh;
+        &:nth-of-type(2n) {
+            background: $pz-background-color;
+        }
+    }
+    .cover {
+        &:nth-of-type(2n+1) {
+            background-color: limegreen;
+        }
+    }
+    .cover {
+        &:first-of-type {
+            background: $pz-cover-picture-url center fixed no-repeat;
+        }
+    }
+    
+}*/
+.box-2--pieces {
+  width: calc(100% / 2 - 20px); }
 
-.col {
-  flex-direction: column; }
+.box-3--pieces {
+  width: calc(100% / 3 - 20px); }
 
-.offset-5 {
-  margin-left: 5%; }
-
-.offset-30 {
-  margin-left: 30%; }
-
-.fill-16\/9 {
-  width: 100%;
-  max-height: 56.25%; }
-
-.cover {
-  background-size: cover;
-  min-height: 100vh; }
-  .cover:nth-of-type(2n) {
-    background: gray; }
-
-.cover:nth-of-type(2n+1) {
-  background-color: limegreen; }
-
-.cover:first-of-type {
-  background: url("") center fixed no-repeat; }
+.box-4--pieces {
+  width: calc(100% / 4 - 20px); }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,6 +19,7 @@ form {
             border: $pz-form-border-style;
             color: $pz-form-font-color;
             font-size: $pz-form-font-size;
+            width: 100%;
         }
         textarea {
             border-radius: $pz-border-radius;
@@ -26,6 +27,7 @@ form {
             min-height: 7rem;
             color: $pz-form-font-color;
             font-size: $pz-form-font-size + 0.1rem;
+            width: 100%;
         }
     }
 }

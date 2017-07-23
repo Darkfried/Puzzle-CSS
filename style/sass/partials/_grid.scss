@@ -1,31 +1,46 @@
+
+@function pz-class-name($num, $name:$pz-pieces-name){
+    
+    $class-name: #{$pz-container}#{$num}#{$pz-pieces-name};
+    
+    @return $class-name;
+}
+
+@mixin pz-create-pieces-class($pieces) {
+    // Initialise an empty utility map that will eventually contain all our classes
+    $pseudo-class-map: ();
+    // Loop widths as fractions
+    $num:1;
+    @each $num in $pieces {
+        
+        @if($num !=0) {
+            // Create class name and set width value
+            
+            $width-value: calc(100% / #{$num} - #{$pz-gutter});
+            // Create width class
+            .#{pz-class-name($num)}{
+                width: $width-value;
+            }
+        }
+    }
+}
+
 @if($pz-grid) {
-    
-    .row {
+    //container
+    *[class*='#{$pz-container}'] {
         display: flex;
-        flex: 1 1 100%;
-        padding: 5px;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: -($pz-gutter);
     }
-    .centerH {
-        justify-content: center;
+    //child's
+    *[class*='#{$pz-pieces-name}'] > *{
+        flex: 0 0 auto;
+        display: block; //for IE
+        margin-left: $pz-gutter;
     }
-    .centerV {
-        align-items: center;
-        text-align: center;
-    }
-    .col {
-        flex-direction: column;
-    }
-    .offset-5 {
-        margin-left: 5%;
-    }
-    .offset-30 {
-        margin-left: 30%;
-    }
-    .fill-16\/9 {
-        width: 100%;
-        max-height: 56.25%;
-    }
-    
+    /*   
     @if($pz-one-page-options) {
         
         .cover {
@@ -46,5 +61,6 @@
             }
         }
         
-    }
+    }*/
+    @include pz-create-pieces-class($pz-pieces);
 }
