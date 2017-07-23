@@ -1,39 +1,40 @@
 @chartset: utf-8;
 
 //#####général properties########
-$pz-background-color: rgb(128, 128, 128) !default;
-$pz-border-radius: 3px !default;
-$pz-transition-duration: 0.3s !default;
+$pz-background-color:       rgb(128, 128, 128) !default;
+$pz-border-radius:          3px !default;
+$pz-transition-duration:    0.3s !default;
 
 //#####grid properties########
-$pz-gutter: 1em !default;
-$pz-cover-picture-url: url('') !default;
-$pz-pieces-name:'--pieces' !default;
-$pz-pieces: (2, 3, 4) !default;
-$pz-container: 'box-' !default;
+$pz-gutter:                1em !default;
+$pz-cover-picture-url:      url('') !default; //not operationnal yet
+$pz-pieces-name:            'pieces' !default;
+$pz-pieces:                 (2, 3, 4) !default;
+$pz-pieces-size-scale:      (2, 3) !default;
+$pz-container:              'box' !default;
 
 //#####clip-path premade########
-$pz-chevron: polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%) !default;
-$pz-banner-flag: polygon(5% 100%, 0% 100%, 0% 0%, 50% 40%, 100% 0%, 100% 100%, 95% 100%, 95% 10%, 50% 45%, 5% 10%) !default;
+$pz-chevron:                polygon(90% 40%, 90% 75%, 50% 50%, 10% 75%, 10% 40%, 50% 15%) !default;
+$pz-banner-flag:            polygon(5% 100%, 0% 100%, 0% 0%, 50% 40%, 100% 0%, 100% 100%, 95% 100%, 95% 10%, 50% 45%, 5% 10%) !default;
 
 //#####form properties########
-$pz-form-font-size: 0.9rem !default;
-$pz-form-font-color: darkgrey !default;
-$pz-form-border-style: none !default;
+$pz-form-font-size:         0.9rem !default;
+$pz-form-font-color:        darkgrey !default;
+$pz-form-border-style:      none !default;
 
 //#####button properties########
-$pz-btn-border-style: solid 2px !default;
-$pz-btn-color:cornflowerblue !default;
-$pz-btn-font-size: 0.9rem !default;
+$pz-btn-border-style:       solid 2px !default;
+$pz-btn-color:              cornflowerblue !default;
+$pz-btn-font-size:          0.9rem !default;
 
 //#####import options########
-$pz-grid:               true !default;
-$pz-one-page-options:   true !default;
-$pz-form:               false !default;
-$pz-btn:                false !default;
-$pz-menu:               false !default;
-$pz-media:              false !default;
-$pz-graphical-debug:    false !default;
+$pz-grid:                   true !default;
+$pz-one-page-options:       false !default; //not operationnal yet
+$pz-form:                   false !default;
+$pz-btn:                    false !default;
+$pz-menu:                   false !default;
+$pz-media:                  false !default;
+$pz-graphical-debug:        true !default;
 
 * {
     @if($pz-graphical-debug){
@@ -48,6 +49,16 @@ $pz-graphical-debug:    false !default;
 
 body {
     background: $pz-background-color;
+}
+
+div{
+    & div{
+        background-color: darken($pz-background-color, 30%);
+        
+        & div{
+        background-color: darken($pz-background-color, 60%);
+    }
+    }
 }
 
 //#####if possible don't touche those ones########

@@ -1,45 +1,69 @@
+@function pz-box-class-name($num, $name:$pz-pieces-name) {
+    $class-name: '#{$pz-container}-#{$num}-#{$pz-pieces-name}';
+    @return $class-name;
+}
 
-@function pz-class-name($num, $name:$pz-pieces-name){
-    
-    $class-name: #{$pz-container}#{$num}#{$pz-pieces-name};
-    
+@function pz-create-pieces-scale-class-name($scale, $name:$pz-pieces-name) {
+    $class-name: 'scale-#{$scale}x-#{$pz-pieces-name}';
     @return $class-name;
 }
 
 @mixin pz-create-pieces-class($pieces) {
-    // Initialise an empty utility map that will eventually contain all our classes
-    $pseudo-class-map: ();
-    // Loop widths as fractions
-    $num:1;
+    // Loop throught the number of pieces
+    $num: 1;
     @each $num in $pieces {
-        
         @if($num !=0) {
             // Create class name and set width value
-            
-            $width-value: calc(100% / #{$num} - #{$pz-gutter});
-            // Create width class
-            .#{pz-class-name($num)}{
-                width: $width-value;
+            .#{pz-box-class-name($num)} {
+                width: calc(100% * 1 / #{$num} - #{$pz-gutter});
             }
         }
     }
 }
 
+@mixin pz-create-scale-class($scale){
+    @each $factor in $scale {
+                // Create scale class
+                .#{pz-create-pieces-scale-class-name($factor)} {
+                    flex-grow: $factor;
+                }
+            }
+}
+
 @if($pz-grid) {
     //container
     *[class*='#{$pz-container}'] {
+        @extend .#{$pz-container};
+    }
+    //child's
+    *[class*='#{$pz-container}']>* {
+        flex: 1 1 auto;
+        display: inline-block; //for IE
+                margin: $pz-gutter;
+        padding: $pz-gutter;
+    }
+    .#{$pz-container} {
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
-        justify-content: space-around;
-        margin-left: -($pz-gutter);
+        //justify-content: center;
+        //margin: $pz-gutter;
     }
-    //child's
-    *[class*='#{$pz-pieces-name}'] > *{
-        flex: 0 0 auto;
-        display: block; //for IE
-        margin-left: $pz-gutter;
-    }
+
+.limited{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.full{
+    min-height: calc(100vh - #{$pz-gutter});
+}
+
+.center{
+    margin: auto !important;
+    margin-top: 25%;
+}
+
     /*   
     @if($pz-one-page-options) {
         
@@ -63,4 +87,5 @@
         
     }*/
     @include pz-create-pieces-class($pz-pieces);
+    @include pz-create-scale-class($pz-pieces-size-scale);
 }
