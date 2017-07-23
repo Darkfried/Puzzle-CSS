@@ -47,20 +47,23 @@
         flex-wrap: wrap;
         //margin: $pz-gutter;
     }
-
-    .fullview-box {
-        min-height: calc(100vh - #{$pz-gutter});
+    .col {
+        flex-flow: column;
     }
 
     .center-piece {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 25%;        /*IE trick*/
-        align-self: center;
+        margin:auto;
+        
+        align-self: center;/*IE trick*/
     }
-    /*   
+      
     @if($pz-one-page-options) {
         
+            .fullview-box {
+        height: calc(100vh - #{$pz-gutter});
+        min-height: calc(100vh - #{$pz-gutter});
+    }
+        /*
         .cover {
             background-size: cover;
             min-height: 100vh;
@@ -77,9 +80,9 @@
             &:first-of-type {
                 background: $pz-cover-picture-url center fixed no-repeat;
             }
-        }
+        }*/
         
-    }*/
+    }
     @include pz-create-pieces-class($pz-pieces);
     @include pz-create-scale-class($pz-pieces-size-scale);
 }

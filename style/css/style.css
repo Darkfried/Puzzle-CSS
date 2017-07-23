@@ -24,37 +24,35 @@ div div {
   flex-flow: row;
   flex-wrap: wrap; }
 
-.fullview-box {
-  min-height: calc(100vh - 1em); }
+.col {
+  flex-flow: column; }
 
 .center-piece {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 25%;
-  /*IE trick*/
-  align-self: center; }
+  margin: auto;
+  align-self: center;
+  /*IE trick*/ }
 
-/*   
-@if($pz-one-page-options) {
-    
-    .cover {
-        background-size: cover;
-        min-height: 100vh;
-        &:nth-of-type(2n) {
-            background: $pz-background-color;
-        }
+.fullview-box {
+  height: calc(100vh - 1em);
+  min-height: calc(100vh - 1em); }
+
+/*
+.cover {
+    background-size: cover;
+    min-height: 100vh;
+    &:nth-of-type(2n) {
+        background: $pz-background-color;
     }
-    .cover {
-        &:nth-of-type(2n+1) {
-            background-color: limegreen;
-        }
+}
+.cover {
+    &:nth-of-type(2n+1) {
+        background-color: limegreen;
     }
-    .cover {
-        &:first-of-type {
-            background: $pz-cover-picture-url center fixed no-repeat;
-        }
+}
+.cover {
+    &:first-of-type {
+        background: $pz-cover-picture-url center fixed no-repeat;
     }
-    
 }*/
 .box-2-pieces {
   width: calc(100% * 1 / 2 - 1em); }
