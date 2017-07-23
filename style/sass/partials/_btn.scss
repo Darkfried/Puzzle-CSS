@@ -1,31 +1,34 @@
 @if($pz-btn) {
-    
     .btn-base {
         border-radius: $pz-border-radius;
-        border: $pz-btn-border-style;
+        border: none;
         line-height: 2rem;
-        width: 20%;
         text-align: center;
         font-size: $pz-btn-font-size;
         margin-top: 1rem;
         position: relative;
-        left: 80%;
         transition-duration: 0.4s;
+        text-decoration: none;
     }
-    
     .btn {
         @extend .btn-base;
-        
         background-color: $pz-btn-color;
+        color: white;
         &:hover {
             background-color: darken($pz-btn-color, 10%);
         }
     }
-    
     .btn-clear {
-        @extend .btn;
+        @extend .btn-base;
         background: none;
         color: $pz-btn-color;
-        border-style: solid $pz-btn-color 2px;
+        border: solid $pz-btn-color 2px;
+        &:hover {
+            background-color: darken($pz-background-color, 10%);
+        }
+    }
+    
+    .btn-right {
+        left: 80%;
     }
 }

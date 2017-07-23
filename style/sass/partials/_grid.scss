@@ -15,7 +15,8 @@
         @if($num !=0) {
             // Create class name and set width value
             .#{pz-box-class-name($num)} {
-                width: calc(100% * 1 / #{$num} - #{$pz-gutter});
+                width: calc(100% * 1 / #{$num} - #{$pz-gutter}); //pour le centrage sur IE
+                max-width: calc(100% * 1 / #{$num} - #{$pz-gutter});
             }
         }
     }
@@ -31,6 +32,11 @@
 }
 
 @if($pz-grid) {
+    * {
+        @if($pz-graphical-debug) {
+            border: solid black 1px;
+        }
+    }
     //container
     *[class*='#{$pz-container}'] {
         @extend .#{$pz-container};
@@ -45,24 +51,23 @@
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
+        justify-content: center;
         //margin: $pz-gutter;
     }
     .col {
         flex-flow: column;
+        flex-basis: 100%; //needed for IE to wrap the text
     }
-
     .center-piece {
-        margin:auto;
-        
-        align-self: center;/*IE trick*/
+        margin: calc(auto - #{$pz-gutter} /2);
+        align-self: center;
+        /*IE...*/
     }
-      
     @if($pz-one-page-options) {
-        
-            .fullview-box {
-        height: calc(100vh - #{$pz-gutter});
-        min-height: calc(100vh - #{$pz-gutter});
-    }
+        .fullview-box {
+            height: calc(100vh - #{$pz-gutter});
+            min-height: calc(100vh - #{$pz-gutter});
+        }
         /*
         .cover {
             background-size: cover;
@@ -81,7 +86,6 @@
                 background: $pz-cover-picture-url center fixed no-repeat;
             }
         }*/
-        
     }
     @include pz-create-pieces-class($pz-pieces);
     @include pz-create-scale-class($pz-pieces-size-scale);
