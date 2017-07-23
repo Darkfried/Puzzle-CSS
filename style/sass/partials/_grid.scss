@@ -21,13 +21,13 @@
     }
 }
 
-@mixin pz-create-scale-class($scale){
+@mixin pz-create-scale-class($scale) {
     @each $factor in $scale {
-                // Create scale class
-                .#{pz-create-pieces-scale-class-name($factor)} {
-                    flex-grow: $factor;
-                }
-            }
+        // Create scale class
+        .#{pz-create-pieces-scale-class-name($factor)} {
+            flex-grow: $factor;
+        }
+    }
 }
 
 @if($pz-grid) {
@@ -38,32 +38,26 @@
     //child's
     *[class*='#{$pz-container}']>* {
         flex: 1 1 auto;
-        display: inline-block; //for IE
-                margin: $pz-gutter;
-        padding: $pz-gutter;
+        margin: $pz-gutter / 2;
+        padding: $pz-gutter / 2;
     }
     .#{$pz-container} {
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
-        //justify-content: center;
         //margin: $pz-gutter;
     }
 
-.limited{
-    max-width: 100px;
-    max-height: 100px;
-}
+    .fullview-box {
+        min-height: calc(100vh - #{$pz-gutter});
+    }
 
-.full{
-    min-height: calc(100vh - #{$pz-gutter});
-}
-
-.center{
-    margin: auto !important;
-    margin-top: 25%;
-}
-
+    .center-piece {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25%;        /*IE trick*/
+        align-self: center;
+    }
     /*   
     @if($pz-one-page-options) {
         
