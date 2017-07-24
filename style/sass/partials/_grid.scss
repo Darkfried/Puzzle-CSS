@@ -22,6 +22,20 @@
     }
 }
 
+@mixin pz-create-pieces-class-for-mediaQ($pieces) {
+    // Loop throught the number of pieces
+    $num: 1;
+    @each $num in $pieces {
+        @if($num !=0) {
+            // Create class name and set width value
+            .#{pz-box-class-name($num)} {
+                width: calc(100% - #{$pz-gutter}); //pour le centrage sur IE
+                max-width: calc(100% - #{$pz-gutter});
+            }
+        }
+    }
+}
+
 @mixin pz-create-scale-class($scale) {
     @each $factor in $scale {
         // Create scale class

@@ -1,8 +1,6 @@
-@chartset : utf-8;
 * {
   color: dimgrey;
   box-sizing: border-box;
-  text-align: justify;
   font-family: 'Roboto', sans-serif;
   hyphens: auto;
   word-wrap: break-word;
@@ -10,18 +8,6 @@
 
 body {
   background: white; }
-
-div {
-  text-align: center;
-  background: #e6e6e6; }
-  div div {
-    background: #cccccc; }
-    div div div {
-      background: #b3b3b3; }
-      div div div div {
-        background: #999999; }
-        div div div div div {
-          background: gray; }
 
 *[class*='box'] > * {
   flex: 1 1 auto;
@@ -43,28 +29,6 @@ div {
   align-self: center;
   /*IE...*/ }
 
-.fullview-box {
-  height: calc(100vh - 1em);
-  min-height: calc(100vh - 1em); }
-
-/*
-.cover {
-    background-size: cover;
-    min-height: 100vh;
-    &:nth-of-type(2n) {
-        background: $pz-background-color;
-    }
-}
-.cover {
-    &:nth-of-type(2n+1) {
-        background-color: limegreen;
-    }
-}
-.cover {
-    &:first-of-type {
-        background: $pz-cover-picture-url center fixed no-repeat;
-    }
-}*/
 .box-2-pieces {
   width: calc(100% * 1 / 2 - 1em);
   max-width: calc(100% * 1 / 2 - 1em); }
@@ -77,37 +41,13 @@ div {
   width: calc(100% * 1 / 4 - 1em);
   max-width: calc(100% * 1 / 4 - 1em); }
 
+.scale-0x-pieces {
+  flex-grow: 0; }
+
 .scale-2x-pieces {
   flex-grow: 2; }
 
 .scale-3x-pieces {
   flex-grow: 3; }
-
-.btn-base, .btn, .btn-clear {
-  border-radius: 3px;
-  border: none;
-  line-height: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  position: relative;
-  transition-duration: 0.4s;
-  text-decoration: none; }
-
-.btn {
-  background-color: #FF8B00;
-  color: white; }
-  .btn:hover {
-    background-color: #cc6f00; }
-
-.btn-clear {
-  background: none;
-  color: #FF8B00;
-  border: solid #FF8B00 2px; }
-  .btn-clear:hover {
-    background-color: #e6e6e6; }
-
-.btn-right {
-  left: 80%; }
 
 /*# sourceMappingURL=style.css.map */

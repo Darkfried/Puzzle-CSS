@@ -16,14 +16,16 @@
     .mobile-display {
         display: block;
     }
-    .btn {
-        width: 100%;
-        left: 0;
+    *[class*='btn'] {
+        width: calc(100% - #{$pz-gutter}) ;
     }
 
     .fixed {
         display: none;
     }
+    
+    @include pz-create-pieces-class-for-mediaQ($pz-pieces);
+
 }
 
 @media screen and (min-width:500px) {

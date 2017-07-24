@@ -27,8 +27,14 @@
             background-color: darken($pz-background-color, 10%);
         }
     }
-    
     .btn-right {
-        left: 80%;
+        margin-left: auto;
+    }
+    .btn-center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-left {
+        margin-right: auto;
     }
 }
